@@ -1,10 +1,69 @@
 /* Colors */
-$paragraph-color: #000000;
-$brand-main-color: #ff0000;
+$color-grey-1: #333333;
+$color-grey-2: #979797;
+$color-grey-3: #b1b1b1;
+$color-grey-4: #e3e3e3;
+$color-grey-5: #f5f5f2;
 
-/* Font sizes */
+$color-green-1: #04ae00;
+$color-green-2: #74b67a;
+$color-green-3: #96cc9b;
+
+$color-yellow-1: #f58220;
+$color-yellow-2: #ffa200;
+
+$color-red-1: #ff0000;
+$color-red-2: #de5252;
+$color-red-3: #ec7171;
+
+$color-blue-1: #56819f;
+
+$paragraph-color: $color-grey-2;
+$brand-main-color: $color-red-1;
+
+$sidebar-font-color: $color-grey-3;
+
+/* Sizes */
 $paragraph-font-size: 16px;
+$svg-size-normal: 20px;
+$svg-size-small: 12px;
+$header-height: 50px;
+$manager-foto-size: 50px;
+$notify-dot-size: 8px;
+$notify-dot-size-lg: 12px;
+$sidenav-width: 270px;
 
 /* Fonts */
 $brand-font: 'Open Sans', Helvetica, Arial;
 $paragraph-font: 'Open Sans', Helvetica, Arial;
+
+/* Fonts boldness*/
+$font-light: 300;
+$font-normal: 400;
+$font-semibold: 500;
+$font-bold: 700;
+
+/* Transition */
+$transition: all ease-in-out 300ms;
+
+/* Border */
+$radius: 6px;
+$dropdown-border-width: 1px;
+
+/* Paddings */
+
+$container-padding: 5px;
+$dropdown-padding: 15px;
+
+$header-item-padding: 15px;
+
+$svg-padding: 27px;
+$svg-padding-sidebar: 15px;
+
+$sidenav-item-padding: 12px;
+$sidenav-header-padding: 15px;
+
+/* Hover colors */
+
+$sidenav-hover-color: $color-grey-5;
+$sidenav-bg-hover-color: $color-grey-2;

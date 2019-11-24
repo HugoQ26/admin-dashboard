@@ -1,0 +1,40 @@
+.dropdown {
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+
+  h2 {
+    font-size: 18px;
+    padding: 0 $header-item-padding;
+  }
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  display: none;
+
+  min-width: 200px;
+  padding: $dropdown-padding 0;
+  text-align: left;
+  background-color: $color-grey-5;
+
+  border: $dropdown-border-width solid $color-grey-4;
+  border-radius: $radius;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+svg {
+  fill: $sidebar-font-color;
+}

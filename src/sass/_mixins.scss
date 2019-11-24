@@ -1,0 +1,14 @@
+@mixin header-item-border {
+  border-left: 1px solid $color-grey-3;
+}
+
+@mixin sidebar-item-border {
+  border-left: 5px solid $color-yellow-1;
+}
+
+@mixin center-fixed {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

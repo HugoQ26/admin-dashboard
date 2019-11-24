@@ -1,0 +1,100 @@
+#sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidenav-width;
+  height: 100%;
+  background: $color-grey-1;
+
+  .sidenav-header {
+    padding: 0 $sidenav-header-padding;
+    height: $header-height;
+
+    .sidebar-logo {
+      font-size: 25px;
+
+      &:hover {
+        color: $sidenav-hover-color;
+      }
+    }
+
+    .hamburger {
+      cursor: pointer;
+
+      &:hover div {
+        color: $sidenav-hover-color;
+        background: $sidenav-hover-color;
+      }
+    }
+  }
+
+  .sidenav-item {
+    padding: $sidenav-header-padding;
+    width: 100%;
+    position: relative;
+
+    &:nth-last-child(2)::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: -30px;
+      background: $sidenav-bg-hover-color;
+    }
+
+    &:hover {
+      background: $sidenav-bg-hover-color;
+    }
+
+    &:hover::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: $color-yellow-1;
+    }
+
+    &:hover p {
+      color: $sidenav-hover-color;
+    }
+
+    &:hover svg {
+      fill: $sidenav-hover-color;
+    }
+  }
+
+  p {
+    color: $sidebar-font-color;
+  }
+
+  svg {
+    fill: $sidebar-font-color;
+    padding-right: $sidenav-header-padding;
+  }
+
+  .sidenav-footer {
+    padding: 50px $sidenav-header-padding 0 $sidenav-header-padding;
+
+    .red-dot {
+      left: 70%;
+      background: $color-green-1;
+      width: $notify-dot-size-lg;
+      height: $notify-dot-size-lg;
+    }
+  }
+
+  #manager-foto {
+    background: red
+      url('https://images.pexels.com/photos/2050979/pexels-photo-2050979.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')
+      40% 40% / 160% no-repeat;
+    width: $manager-foto-size;
+    height: $manager-foto-size;
+    border-radius: 50%;
+  }
+  #manager {
+    padding: 0 15px;
+  }
+}

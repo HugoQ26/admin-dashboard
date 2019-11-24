@@ -1,0 +1,59 @@
+.btn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: $radius;
+  color: $color-grey-5;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+
+  &:hover {
+    background: $color-grey-5;
+    cursor: pointer;
+  }
+}
+
+.btn.btn-grey {
+  background: $color-grey-2;
+
+  &:hover {
+    background: $color-grey-3;
+    cursor: pointer;
+  }
+}
+
+.btn.btn-yellow {
+  background: $color-yellow-1;
+
+  &:hover {
+    background: $color-yellow-2;
+    cursor: pointer;
+  }
+}
+
+.btn.btn-disabled {
+  background: $color-grey-4;
+  cursor: inherit;
+}
+
+.btn-group {
+  display: flex;
+
+  .btn {
+    margin: 0;
+    border-radius: 0;
+
+    &:first-of-type {
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:last-of-type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+    }
+  }
+}

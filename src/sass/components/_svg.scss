@@ -1,0 +1,11 @@
+img[src$='.svg'],
+svg {
+  width: $svg-size-normal;
+  height: $svg-size-normal;
+  box-sizing: unset;
+
+  &.svg-small {
+    width: $svg-size-small;
+    height: $svg-size-small;
+  }
+}

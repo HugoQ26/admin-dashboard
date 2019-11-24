@@ -1,0 +1,16 @@
+.notify {
+  div {
+    position: relative;
+    display: inline-block;
+  }
+
+  .red-dot {
+    position: absolute;
+    top: 0;
+    left: 53%;
+    width: $notify-dot-size;
+    height: $notify-dot-size;
+    background: $color-yellow-1;
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,37 @@
+h1 {
+  font-size: 26px;
+  font-weight: $font-semibold;
+  text-transform: uppercase;
+  color: $paragraph-color;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: $font-bold;
+  text-transform: uppercase;
+  color: $paragraph-color;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: $font-bold;
+  padding: 10px 0;
+  margin: 0;
+}
+
+p,
+ul > li,
+ol > li {
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-blue-1;
+
+  &:hover {
+    color: $color-yellow-1;
+  }
+}
