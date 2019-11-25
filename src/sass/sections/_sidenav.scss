@@ -5,6 +5,7 @@
   width: $sidenav-width;
   height: 100%;
   background: $color-grey-1;
+  transition: $transition;
 
   .sidenav-header {
     padding: 0 $sidenav-header-padding;
@@ -96,5 +97,21 @@
   }
   #manager {
     padding: 0 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  #sidenav {
+    transform: translateX(-100%);
+  }
+
+  .hamburger {
+    position: absolute;
+    right: -30px;
+
+    &:hover div {
+      color: $sidenav-hover-color;
+      background: $sidenav-hover-color;
+    }
   }
 }

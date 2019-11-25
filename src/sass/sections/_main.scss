@@ -6,6 +6,6 @@
     $header-item-padding $header-item-padding
     calc(#{$sidenav-width} + #{$header-item-padding});
   .container {
-    background: red;
+    background: $color-white;
   }
 }

@@ -1,0 +1,23 @@
+#general {
+  .vertical-line-right {
+    &:after {
+      top: 10%;
+      bottom: 10%;
+      height: 80%;
+      background: $color-grey-4;
+    }
+  }
+
+  .absolute {
+    left: 58%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .chart {
+    background: red url('../../images/general.png') 70% 38% / 170% no-repeat;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+}

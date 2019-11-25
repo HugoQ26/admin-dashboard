@@ -8,4 +8,8 @@ svg {
     width: $svg-size-small;
     height: $svg-size-small;
   }
+
+  &.svg-white {
+    fill: $color-grey-5;
+  }
 }

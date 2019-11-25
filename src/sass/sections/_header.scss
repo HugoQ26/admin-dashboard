@@ -5,7 +5,7 @@ header {
   // width: calc(100vw - 270px);
   width: 100%;
 
-  background: $color-grey-5;
+  background: white;
   height: $header-height;
 
   .row {
@@ -18,7 +18,7 @@ header {
     padding: 0 $header-item-padding;
 
     &:hover {
-      background: $color-grey-4;
+      background: $color-grey-5;
     }
 
     &:hover #name {
