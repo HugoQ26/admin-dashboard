@@ -68,16 +68,16 @@ $dropdown-border-width: 1px;
 
 /* Paddings */
 
+$main-padding: 15px;
+
+$dropdown-padding: $main-padding;
+$header-item-padding: $main-padding;
+$svg-padding-sidebar: $main-padding;
+$sidenav-header-padding: $main-padding;
+
 $container-padding: 5px;
-$dropdown-padding: 15px;
-
-$header-item-padding: 15px;
-
-$svg-padding: 27px;
-$svg-padding-sidebar: 15px;
-
 $sidenav-item-padding: 12px;
-$sidenav-header-padding: 15px;
+$svg-padding: 27px;
 
 /* Hover colors */
 
