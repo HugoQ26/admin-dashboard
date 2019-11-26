@@ -1,5 +1,6 @@
 .horizontal-line {
   position: relative;
+
   &:after {
     position: absolute;
     content: '';
@@ -13,6 +14,7 @@
 
 .vertical-line-right {
   position: relative;
+
   &:after {
     position: absolute;
     content: '';

@@ -2,11 +2,12 @@ header {
   position: fixed;
   top: 0;
   right: 0;
-  // width: calc(100vw - 270px);
   width: 100%;
 
   background: white;
   height: $header-height;
+
+  z-index: 1;
 
   .row {
     height: 100%;
@@ -30,5 +31,14 @@ header {
     font-size: 16px;
     padding-left: $header-item-padding;
     color: $color-blue-1;
+  }
+}
+
+@media (max-width: $max-width-xs) {
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
   }
 }

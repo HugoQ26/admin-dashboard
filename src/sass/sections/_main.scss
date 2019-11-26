@@ -1,7 +1,5 @@
 #main {
-  max-width: 100%;
   width: 100%;
-  height: 300px;
   padding: calc(#{$header-height} + #{$header-item-padding})
     $header-item-padding $header-item-padding
     calc(#{$sidenav-width} + #{$header-item-padding});
@@ -16,5 +14,12 @@
   #main {
     padding: calc(#{$header-height} + #{$header-item-padding})
       $header-item-padding $header-item-padding $header-item-padding;
+  }
+}
+
+@media (max-width: $max-width-xs) {
+  #main {
+    padding: $header-item-padding $header-item-padding $header-item-padding
+      $header-item-padding;
   }
 }
