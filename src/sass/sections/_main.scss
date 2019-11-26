@@ -5,7 +5,16 @@
   padding: calc(#{$header-height} + #{$header-item-padding})
     $header-item-padding $header-item-padding
     calc(#{$sidenav-width} + #{$header-item-padding});
+  transition: $transition;
+
   .container {
     background: $color-white;
+  }
+}
+
+@media (max-width: $max-width-m) {
+  #main {
+    padding: calc(#{$header-height} + #{$header-item-padding})
+      $header-item-padding $header-item-padding $header-item-padding;
   }
 }

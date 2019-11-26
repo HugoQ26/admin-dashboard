@@ -25,6 +25,20 @@ $brand-main-color: $color-red-1;
 
 $sidebar-font-color: $color-grey-3;
 
+/* Media breakpoints */
+
+// Extra small devices (portrait phones, less than 576px)
+$max-width-xs: 575.98px;
+
+// Small devices (landscape phones, less than 768px)
+$max-width-s: 767.98px;
+
+// Medium devices (tablets, less than 992px)
+$max-width-m: 991.98px;
+
+// Large devices (desktops, less than 1200px)
+$max-width-l: 991.98px;
+
 /* Sizes */
 $paragraph-font-size: 16px;
 $svg-size-normal: 20px;
