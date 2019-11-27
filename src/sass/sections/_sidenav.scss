@@ -104,8 +104,9 @@
   }
 }
 
-.showHideSidenav {
+#sidenav.hideSidenav {
   transform: translateX(-100%);
+  overflow-y: visible;
 
   .hamburger {
     position: absolute;
@@ -114,7 +115,7 @@
     .hamburger-bar {
       width: 17px;
       height: 2px;
-      background-color: $color-grey-1;
+      background-color: $color-grey-2;
       margin: 4px 0;
     }
 

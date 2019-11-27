@@ -3,7 +3,8 @@ export const select = {
   containerOf: {
     header: '#header',
     sidenav: '#sidenav',
-    general: '#general'
+    general: '#general',
+    pages: '#pages'
   },
   templateOf: {
     header: '#template-header',
@@ -25,7 +26,10 @@ export const select = {
 
 export const classNames = {
   sidenav: {
-    showHideSidenav: 'showHideSidenav'
+    hideSidenav: 'hideSidenav'
+  },
+  pages: {
+    pages: 'pagesFullWidth'
   }
 };
 

@@ -5,6 +5,7 @@ import utils from '../utils.js';
 class Sidenav {
   constructor(sidenavWrapper) {
     const thisSidenav = this;
+    thisSidenav.maxWidthM = 991.98;
     thisSidenav.render(sidenavWrapper);
     thisSidenav.getElements();
     thisSidenav.initActions();
@@ -30,35 +31,40 @@ class Sidenav {
     thisSidenav.dom.hamburger = thisSidenav.dom.wrapper.querySelector(
       select.sidenav.hamburger
     );
+
+    thisSidenav.dom.pages = document.querySelector(select.containerOf.pages);
+  }
+
+  resizePage() {
+    const thisSidenav = this;
+
+    const windowWidth = document.documentElement.clientWidth;
+
+    if (windowWidth < thisSidenav.maxWidthM) {
+      thisSidenav.dom.element.classList.add(classNames.sidenav.hideSidenav);
+      thisSidenav.dom.pages.classList.add(classNames.pages.pages);
+    } else {
+      thisSidenav.dom.element.classList.remove(classNames.sidenav.hideSidenav);
+      thisSidenav.dom.pages.classList.remove(classNames.pages.pages);
+    }
   }
 
   initActions() {
     const thisSidenav = this;
     const windowWidth = document.documentElement.clientWidth;
-    console.log(windowWidth);
 
-    window.addEventListener('resize', function() {
-      const windowWidth = document.documentElement.clientWidth;
-      const maxWidthM = 991.98;
+    thisSidenav.resizePage();
 
-      if (windowWidth < maxWidthM) {
-        thisSidenav.dom.element.classList.add(
-          classNames.sidenav.showHideSidenav
-        );
-      } else {
-        thisSidenav.dom.element.classList.remove(
-          classNames.sidenav.showHideSidenav
-        );
-      }
-    });
+    window.addEventListener('resize', this.resizePage.bind(this));
 
     thisSidenav.dom.hamburger.addEventListener('click', function(e) {
       e.preventDefault();
-      console.log(window.innerWidth);
 
-      thisSidenav.dom.element.classList.toggle(
-        classNames.sidenav.showHideSidenav
-      );
+      if (windowWidth > thisSidenav.maxWidthM) {
+        thisSidenav.dom.pages.classList.toggle(classNames.pages.pages);
+      }
+
+      thisSidenav.dom.element.classList.toggle(classNames.sidenav.hideSidenav);
     });
   }
 }
