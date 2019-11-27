@@ -16,6 +16,16 @@ export const select = {
     dropdownMenu: '.dropdown-menu',
     quitButton: '#quitBtn',
     quitPop: '#exit.overlay '
+  },
+
+  sidenav: {
+    hamburger: '.hamburger'
+  }
+};
+
+export const classNames = {
+  sidenav: {
+    showHideSidenav: 'showHideSidenav'
   }
 };
 

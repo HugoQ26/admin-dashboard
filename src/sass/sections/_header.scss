@@ -36,9 +36,8 @@ header {
 
 @media (max-width: $max-width-xs) {
   header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: none;
+    .header-element:first-child {
+      display: none;
+    }
   }
 }

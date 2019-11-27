@@ -102,14 +102,19 @@
   }
 }
 
-@media (max-width: $max-width-m) {
-  #sidenav {
-    transform: translateX(-100%);
-  }
+.showHideSidenav {
+  transform: translateX(-100%);
 
   .hamburger {
     position: absolute;
     right: -30px;
+
+    .hamburger-bar {
+      width: 17px;
+      height: 2px;
+      background-color: $color-grey-1;
+      margin: 4px 0;
+    }
 
     &:hover div {
       color: $sidenav-hover-color;
@@ -117,3 +122,31 @@
     }
   }
 }
+
+.hamburger-reposition {
+  position: absolute;
+  right: -50px;
+}
+
+// @media (max-width: $max-width-m) {
+//   #sidenav {
+//     transform: translateX(-100%);
+//   }
+
+//   .hamburger {
+//     position: absolute;
+//     right: -30px;
+
+//     .hamburger-bar {
+//       width: 17px;
+//       height: 2px;
+//       background-color: $color-grey-1;
+//       margin: 4px 0;
+//     }
+
+//     &:hover div {
+//       color: $sidenav-hover-color;
+//       background: $sidenav-hover-color;
+//     }
+//   }
+// }

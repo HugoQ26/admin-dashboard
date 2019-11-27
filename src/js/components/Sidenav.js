@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { select, templates } from '../settings.js';
+import { select, templates, classNames } from '../settings.js';
 import utils from '../utils.js';
 
 class Sidenav {
@@ -23,31 +23,43 @@ class Sidenav {
   getElements() {
     const thisSidenav = this;
 
-    // thisSidenav.dom.element = document.querySelector('sidenav');
+    thisSidenav.dom.element = document.querySelector(
+      select.containerOf.sidenav
+    );
 
-    // thisSidenav.dom.dropdown = document.querySelector(select.dropdown.dropdown);
-
-    // thisSidenav.dom.dropdownMenu = document.querySelector(
-    //   select.dropdown.dropdownMenu
-    // );
-
-    // thisSidenav.dom.quitButton = thisSidenav.dom.element.querySelector(
-    //   select.dropdown.quitButton
-    // );
-
-    // thisSidenav.dom.quitPop = document.querySelector(select.dropdown.quitPop);
+    thisSidenav.dom.hamburger = thisSidenav.dom.wrapper.querySelector(
+      select.sidenav.hamburger
+    );
   }
 
   initActions() {
     const thisSidenav = this;
+    const windowWidth = document.documentElement.clientWidth;
+    console.log(windowWidth);
 
-    // thisSidenav.dom.dropdown.addEventListener('click', function() {
-    //   thisSidenav.dom.dropdownMenu.classList.toggle('show');
-    // });
+    window.addEventListener('resize', function() {
+      const windowWidth = document.documentElement.clientWidth;
+      const maxWidthM = 991.98;
 
-    // thisSidenav.dom.quitButton.addEventListener('click', function() {
-    //   thisSidenav.dom.quitPop.classList.toggle('show');
-    // });
+      if (windowWidth < maxWidthM) {
+        thisSidenav.dom.element.classList.add(
+          classNames.sidenav.showHideSidenav
+        );
+      } else {
+        thisSidenav.dom.element.classList.remove(
+          classNames.sidenav.showHideSidenav
+        );
+      }
+    });
+
+    thisSidenav.dom.hamburger.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log(window.innerWidth);
+
+      thisSidenav.dom.element.classList.toggle(
+        classNames.sidenav.showHideSidenav
+      );
+    });
   }
 }
 
