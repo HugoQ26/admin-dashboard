@@ -1,4 +1,4 @@
-#main {
+#pages {
   width: 100%;
   padding: calc(#{$header-height} + #{$header-item-padding})
     $header-item-padding $header-item-padding
@@ -11,14 +11,14 @@
 }
 
 @media (max-width: $max-width-m) {
-  #main {
+  #pages {
     padding: calc(#{$header-height} + #{$header-item-padding})
       $header-item-padding $header-item-padding $header-item-padding;
   }
 }
 
 @media (max-width: $max-width-xs) {
-  #main {
+  #pages {
     padding: $header-item-padding $header-item-padding $header-item-padding
       $header-item-padding;
   }

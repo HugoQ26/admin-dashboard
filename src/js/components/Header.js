@@ -1,15 +1,27 @@
-import { select } from '../settings.js';
+/* eslint-disable no-unused-vars */
+import { select, templates } from '../settings.js';
+import utils from '../utils.js';
 
 class Header {
-  constructor() {
+  constructor(headerWrapper) {
     const thisHeader = this;
+    thisHeader.render(headerWrapper);
     thisHeader.getElements();
     thisHeader.initActions();
   }
 
+  render(element) {
+    const thisHeader = this;
+    const generatedHTML = templates.header();
+    thisHeader.dom = {};
+    thisHeader.dom.wrapper = element;
+
+    thisHeader.element = utils.createDOMFromHTML(generatedHTML);
+    thisHeader.dom.wrapper.appendChild(thisHeader.element);
+  }
+
   getElements() {
     const thisHeader = this;
-    thisHeader.dom = {};
 
     thisHeader.dom.element = document.querySelector('header');
 
