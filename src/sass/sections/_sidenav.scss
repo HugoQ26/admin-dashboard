@@ -39,9 +39,11 @@
 
     &.active {
       background: $sidenav-bg-hover-color;
+
       p {
         color: $color-grey-5;
       }
+
       svg {
         fill: $color-grey-5;
       }
