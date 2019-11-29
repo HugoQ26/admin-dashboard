@@ -15,6 +15,16 @@
     $header-item-padding $header-item-padding $header-item-padding;
 }
 
+#pages .container {
+  > * {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
+}
+
 // @media (max-width: $max-width-m) {
 //   #pages {
 //     padding: calc(#{$header-height} + #{$header-item-padding})

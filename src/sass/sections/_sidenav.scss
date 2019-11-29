@@ -37,6 +37,16 @@
     width: 100%;
     position: relative;
 
+    &.active {
+      background: $sidenav-bg-hover-color;
+      p {
+        color: $color-grey-5;
+      }
+      svg {
+        fill: $color-grey-5;
+      }
+    }
+
     &:nth-last-child(2)::before {
       position: absolute;
       content: '';

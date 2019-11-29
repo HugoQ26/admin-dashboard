@@ -1,0 +1,24 @@
+#links > div {
+  .linksLink {
+    padding: 5px 0;
+    transition: $transition;
+
+    &:hover {
+      background: $color-grey-5;
+
+      svg {
+        display: inline-block;
+      }
+    }
+
+    svg {
+      padding: 5px 5px;
+      display: none;
+
+      &:hover {
+        fill: $color-yellow-1;
+        cursor: pointer;
+      }
+    }
+  }
+}

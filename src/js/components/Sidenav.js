@@ -32,7 +32,7 @@ class Sidenav {
       select.sidenav.hamburger
     );
 
-    thisSidenav.dom.pages = document.querySelector(select.containerOf.pages);
+    thisSidenav.dom.pages = document.querySelector(select.containerOf.mainPage);
   }
 
   resizePage() {
@@ -42,10 +42,10 @@ class Sidenav {
 
     if (windowWidth < thisSidenav.maxWidthM) {
       thisSidenav.dom.element.classList.add(classNames.sidenav.hideSidenav);
-      thisSidenav.dom.pages.classList.add(classNames.pages.pages);
+      thisSidenav.dom.pages.classList.add(classNames.pages.pagesFullWidth);
     } else {
       thisSidenav.dom.element.classList.remove(classNames.sidenav.hideSidenav);
-      thisSidenav.dom.pages.classList.remove(classNames.pages.pages);
+      thisSidenav.dom.pages.classList.remove(classNames.pages.pagesFullWidth);
     }
   }
 
@@ -61,7 +61,7 @@ class Sidenav {
       e.preventDefault();
 
       if (windowWidth > thisSidenav.maxWidthM) {
-        thisSidenav.dom.pages.classList.toggle(classNames.pages.pages);
+        thisSidenav.dom.pages.classList.toggle(classNames.pages.pagesFullWidth);
       }
 
       thisSidenav.dom.element.classList.toggle(classNames.sidenav.hideSidenav);

@@ -33,6 +33,10 @@ body {
   align-items: center;
 }
 
+// .justify-self-start {
+//   justify-self: flex-start;
+// }
+
 .col {
   flex: 0 0 1;
 }
@@ -99,6 +103,12 @@ body {
   flex: 0 0 83.3%;
 }
 
+.col-md-10 {
+  @media (max-width: $max-width-m) {
+    flex: 0 0 83.3%;
+  }
+}
+
 .col-l-10 {
   @media (max-width: $max-width-l) {
     flex: 0 0 83.3%;
@@ -161,11 +171,13 @@ body {
 }
 
 .my-2 {
-  margin: 0 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .my-4 {
-  margin: 0 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .br-0 {

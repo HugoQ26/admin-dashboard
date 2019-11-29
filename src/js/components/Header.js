@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* global faker */
 import { select, templates } from '../settings.js';
 import utils from '../utils.js';
 
@@ -12,7 +13,14 @@ class Header {
 
   render(element) {
     const thisHeader = this;
-    const generatedHTML = templates.header();
+
+    const data = {
+      name: faker.name.findName(),
+      amount: faker.finance.amount()
+    };
+
+    const generatedHTML = templates.header(data);
+
     thisHeader.dom = {};
     thisHeader.dom.wrapper = element;
 

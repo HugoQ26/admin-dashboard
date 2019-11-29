@@ -4,12 +4,15 @@ export const select = {
     header: '#header',
     sidenav: '#sidenav',
     general: '#general',
-    pages: '#pages'
+    pages: '#pages .container',
+    mainPage: '#pages',
+    links: '#links'
   },
   templateOf: {
     header: '#template-header',
     sidenav: '#template-sidenav',
-    general: '#template-general'
+    general: '#template-general',
+    links: '#template-links'
   },
 
   dropdown: {
@@ -20,16 +23,19 @@ export const select = {
   },
 
   sidenav: {
-    hamburger: '.hamburger'
+    hamburger: '.hamburger',
+    links: '.sidenav-item'
   }
 };
 
 export const classNames = {
   sidenav: {
-    hideSidenav: 'hideSidenav'
+    hideSidenav: 'hideSidenav',
+    active: 'active'
   },
   pages: {
-    pages: 'pagesFullWidth'
+    pagesFullWidth: 'pagesFullWidth',
+    active: 'active'
   }
 };
 
@@ -51,5 +57,8 @@ export const templates = {
   ),
   general: Handlebars.compile(
     document.querySelector(select.templateOf.general).innerHTML
+  ),
+  links: Handlebars.compile(
+    document.querySelector(select.templateOf.links).innerHTML
   )
 };
