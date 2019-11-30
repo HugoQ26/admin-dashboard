@@ -4,20 +4,20 @@ import { select, templates } from '../settings.js';
 import utils from '../utils.js';
 
 class Header {
-  constructor(headerWrapper) {
+  constructor(headerWrapper, data) {
     const thisHeader = this;
-    thisHeader.render(headerWrapper);
+    thisHeader.render(headerWrapper, data);
     thisHeader.getElements();
     thisHeader.initActions();
   }
 
-  render(element) {
+  render(element, data) {
     const thisHeader = this;
 
-    const data = {
-      name: faker.name.findName(),
-      amount: faker.finance.amount()
-    };
+    // const data = {
+    //   name: faker.name.findName(),
+    //   amount: faker.finance.amount()
+    // };
 
     const generatedHTML = templates.header(data);
 
@@ -54,7 +54,7 @@ class Header {
     });
 
     thisHeader.dom.quitButton.addEventListener('click', function() {
-      thisHeader.dom.quitPop.classList.toggle('show');
+      thisHeader.dom.quitPop.classList.add('show');
     });
   }
 }

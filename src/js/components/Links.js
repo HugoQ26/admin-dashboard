@@ -4,17 +4,17 @@ import { select, templates } from '../settings.js';
 import utils from '../utils.js';
 
 class Links {
-  constructor(linksWrapper) {
+  constructor(linksWrapper, data) {
     const thisLinks = this;
-    thisLinks.initData();
-    thisLinks.render(linksWrapper);
-    // thisLinks.getElements();
-    // thisLinks.initActions();
+    thisLinks.render(linksWrapper, data);
+    thisLinks.getElements();
+    thisLinks.initActions(data);
   }
 
-  render(element) {
+  render(element, data) {
     const thisLinks = this;
-    const generatedHTML = templates.links(thisLinks.urls);
+
+    const generatedHTML = templates.links(data.links);
     thisLinks.dom = {};
     thisLinks.dom.wrapper = element;
 
@@ -22,26 +22,32 @@ class Links {
     thisLinks.dom.wrapper.appendChild(thisLinks.element);
   }
 
-  initData() {
+  getElements() {
     const thisLinks = this;
-    thisLinks.urls = [];
-    console.log(faker.random.uuid());
 
-    for (let i = 0; i < 10; i++) {
-      const url = faker.internet.url();
-      const name = url.slice(8);
-
-      thisLinks.urls.push({ url, name });
-    }
+    thisLinks.linksLink = document.querySelectorAll(select.links.link);
+    thisLinks.editLink = document.querySelectorAll(select.links.editLink);
+    thisLinks.deleteLinkIcons = document.querySelectorAll(
+      select.links.deleteLink
+    );
   }
 
-  //   getElements() {
-  //     const thisLinks = this;
-  //   }
+  initActions(data) {
+    const thisLinks = this;
 
-  //   initActions() {
-  //     const thisLinks = this;
-  //   }
+    for (const deleteBtn of thisLinks.deleteLinkIcons) {
+      deleteBtn.addEventListener('click', function() {
+        const index = this.id.slice(6);
+
+        data.links.splice(index, 1);
+
+        thisLinks.dom.wrapper.innerHTML = '';
+        thisLinks.render(thisLinks.dom.wrapper, data);
+        thisLinks.getElements();
+        thisLinks.initActions(data);
+      });
+    }
+  }
 }
 
 export default Links;

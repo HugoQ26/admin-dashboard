@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import Header from './components/Header.js';
 import Sidenav from './components/Sidenav.js';
@@ -8,6 +9,7 @@ import { select, classNames } from './settings.js';
 const app = {
   init: function() {
     const thisApp = this;
+    thisApp.initData();
     thisApp.initHeader();
     thisApp.initSideNav();
     thisApp.initGeneral();
@@ -17,20 +19,39 @@ const app = {
 
   initData: function() {
     const thisApp = this;
+
     thisApp.data = [
       {
         id: 1,
-        name: 'John Rambo',
-        links: [{ name: 'Home page', link: 'htttp//:www.homepage.pl' }]
+        name: 'John',
+        surname: 'Rambo',
+        email: 'john.rambo@war.org',
+        phone: '+1234353252',
+        skype: '',
+        icq: '',
+        msn: '',
+        wallet: faker.finance.amount(),
+        password: '',
+        links: []
       }
     ];
+
+    for (const user of thisApp.data) {
+      for (let link = 0; link < 10; link++) {
+        const url = faker.internet.url();
+        const name = url.slice(8);
+
+        user.links.push({ url, name });
+      }
+    }
+    console.log(thisApp.data);
   },
 
   initHeader: function() {
     const thisApp = this;
 
     thisApp.header = document.querySelector(select.containerOf.header);
-    const header = new Header(thisApp.header);
+    const header = new Header(thisApp.header, thisApp.data[0]);
   },
 
   initSideNav: function() {
@@ -44,14 +65,14 @@ const app = {
     const thisApp = this;
 
     thisApp.general = document.querySelector(select.containerOf.general);
-    console.log(thisApp.general);
+
     const general = new General(thisApp.general);
   },
 
   initLinks: function() {
     const thisApp = this;
     thisApp.links = document.querySelector(select.containerOf.links);
-    const links = new Links(thisApp.links);
+    const links = new Links(thisApp.links, thisApp.data[0]);
   },
 
   initPages: function() {
@@ -60,18 +81,13 @@ const app = {
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
 
     thisApp.navLinks = document.querySelectorAll(select.sidenav.links);
-    console.log('ssssss', thisApp.navLinks);
 
     const idFromHash = window.location.hash.replace('#/', '');
-    console.log('idfromhash: ', idFromHash);
 
     let pageMatchingHash = thisApp.pages[0].id;
-    console.log('pageMatchingHash: ', pageMatchingHash);
 
     for (const page of thisApp.pages) {
       if (page.id == idFromHash) {
-        console.log('page id', page.id);
-        console.log('idFromhash', idFromHash);
         pageMatchingHash = page.id;
         break;
       }

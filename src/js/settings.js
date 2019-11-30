@@ -25,6 +25,12 @@ export const select = {
   sidenav: {
     hamburger: '.hamburger',
     links: '.sidenav-item'
+  },
+
+  links: {
+    link: '.linksLink',
+    editLink: '.edit-link',
+    deleteLink: '.delete-link'
   }
 };
 
