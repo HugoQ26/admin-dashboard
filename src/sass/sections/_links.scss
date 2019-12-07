@@ -1,7 +1,30 @@
 #links > div {
+  text-align: center;
+
   .linksLink {
     padding: 5px 0;
     transition: $transition;
+    display: inline-block;
+    text-align: left;
+
+    h3 {
+      display: inline-block;
+      min-width: 200px;
+    }
+
+    & > div {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 200px;
+      position: relative;
+
+      div {
+        display: inline-block;
+        text-align: right;
+      }
+    }
 
     &:hover {
       background: $color-grey-5;

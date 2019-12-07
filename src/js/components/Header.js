@@ -43,6 +43,10 @@ class Header {
       select.dropdown.quitButton
     );
 
+    thisHeader.dom.name = document.querySelector('#name');
+
+    console.log('aaasas', thisHeader.dom.name);
+
     thisHeader.dom.quitPop = document.querySelector(select.dropdown.quitPop);
   }
 
@@ -55,6 +59,17 @@ class Header {
 
     thisHeader.dom.quitButton.addEventListener('click', function() {
       thisHeader.dom.quitPop.classList.add('show');
+    });
+
+    const clickedName = new Event('click', {
+      detail: {
+        name: 'dupa'
+      }
+    });
+    thisHeader.dom.name.dispatchEvent(clickedName);
+
+    thisHeader.dom.name.addEventListener('click', function(e) {
+      console.log(e.name);
     });
   }
 }

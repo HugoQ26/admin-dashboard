@@ -6,13 +6,15 @@ export const select = {
     general: '#general',
     pages: '#pages .container',
     mainPage: '#pages',
-    links: '#links'
+    links: '#links',
+    personalData: '#personal-data'
   },
   templateOf: {
     header: '#template-header',
     sidenav: '#template-sidenav',
     general: '#template-general',
-    links: '#template-links'
+    links: '#template-links',
+    personalData: '#template-personal-data'
   },
 
   dropdown: {
@@ -20,6 +22,10 @@ export const select = {
     dropdownMenu: '.dropdown-menu',
     quitButton: '#quitBtn',
     quitPop: '#exit.overlay '
+  },
+
+  header: {
+    name: '#name'
   },
 
   sidenav: {
@@ -31,6 +37,10 @@ export const select = {
     link: '.linksLink',
     editLink: '.edit-link',
     deleteLink: '.delete-link'
+  },
+
+  personalData: {
+    form: '#personalDataForm'
   }
 };
 
@@ -66,5 +76,8 @@ export const templates = {
   ),
   links: Handlebars.compile(
     document.querySelector(select.templateOf.links).innerHTML
+  ),
+  personalData: Handlebars.compile(
+    document.querySelector(select.templateOf.personalData).innerHTML
   )
 };

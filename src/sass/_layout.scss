@@ -33,9 +33,13 @@ body {
   align-items: center;
 }
 
-// .justify-self-start {
-//   justify-self: flex-start;
-// }
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
+}
 
 .col {
   flex: 0 0 1;

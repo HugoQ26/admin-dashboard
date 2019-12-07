@@ -4,6 +4,7 @@ import Header from './components/Header.js';
 import Sidenav from './components/Sidenav.js';
 import General from './components/General.js';
 import Links from './components/Links.js';
+import PersonalData from './components/PersonalData.js';
 import { select, classNames } from './settings.js';
 
 const app = {
@@ -15,6 +16,16 @@ const app = {
     thisApp.initGeneral();
     thisApp.initLinks();
     thisApp.initPages();
+    thisApp.initPersonaData();
+  },
+
+  initPersonaData() {
+    const thisApp = this;
+
+    thisApp.personalData = document.querySelector(
+      select.containerOf.personalData
+    );
+    const header = new PersonalData(thisApp.personalData, thisApp.data[0]);
   },
 
   initData: function() {

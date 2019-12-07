@@ -17,7 +17,10 @@
   }
 
   #quit {
-    @include center-fixed;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     background: $color-grey-5;
     width: 350px;
 
