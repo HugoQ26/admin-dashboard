@@ -1,29 +1,24 @@
 #links > div {
-  text-align: center;
-
   .linksLink {
+    //display: inline-flex;
+
     padding: 5px 0;
-    transition: $transition;
-    display: inline-block;
-    text-align: left;
 
     h3 {
-      display: inline-block;
       min-width: 200px;
+      display: inline-block;
     }
 
-    & > div {
+    > div {
+      min-width: 250px;
       display: inline-flex;
-      flex-flow: row nowrap;
+      flex-flow: row wrap;
       justify-content: space-between;
       align-items: center;
-      min-width: 200px;
-      position: relative;
-
-      div {
-        display: inline-block;
-        text-align: right;
-      }
+      // a {
+      // }
+      // div {
+      // }
     }
 
     &:hover {
