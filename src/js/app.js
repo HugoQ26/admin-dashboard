@@ -3,7 +3,12 @@
 import Header from './components/Header.js';
 import Sidenav from './components/Sidenav.js';
 import General from './components/General.js';
+import Details from './components/Details.js';
 import Links from './components/Links.js';
+import Banners from './components/Banners.js';
+import Payout from './components/Payout.js';
+import Postback from './components/Postback.js';
+
 import PersonalData from './components/PersonalData.js';
 import { select, classNames } from './settings.js';
 
@@ -14,9 +19,13 @@ const app = {
     thisApp.initHeader();
     thisApp.initSideNav();
     thisApp.initGeneral();
+    thisApp.initDetails();
     thisApp.initLinks();
-    thisApp.initPages();
+    thisApp.initBanners();
     thisApp.initPersonaData();
+    thisApp.initPayout();
+    thisApp.initPostback();
+    thisApp.initPages();
   },
 
   initPersonaData() {
@@ -80,10 +89,42 @@ const app = {
     const general = new General(thisApp.general);
   },
 
+  initDetails: function() {
+    const thisApp = this;
+
+    thisApp.details = document.querySelector(select.containerOf.details);
+
+    const details = new Details(thisApp.details);
+  },
+
   initLinks: function() {
     const thisApp = this;
     thisApp.links = document.querySelector(select.containerOf.links);
     const links = new Links(thisApp.links, thisApp.data[0]);
+  },
+
+  initBanners: function() {
+    const thisApp = this;
+
+    thisApp.banners = document.querySelector(select.containerOf.banners);
+
+    const banners = new Banners(thisApp.banners);
+  },
+
+  initPayout: function() {
+    const thisApp = this;
+
+    thisApp.payout = document.querySelector(select.containerOf.payout);
+
+    const payout = new Payout(thisApp.payout);
+  },
+
+  initPostback: function() {
+    const thisApp = this;
+
+    thisApp.postback = document.querySelector(select.containerOf.postback);
+
+    const postback = new Postback(thisApp.postback);
   },
 
   initPages: function() {

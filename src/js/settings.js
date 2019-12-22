@@ -1,20 +1,28 @@
 /* global Handlebars */
 export const select = {
   containerOf: {
+    mainPage: '#pages',
+    pages: '#pages .container',
     header: '#header',
     sidenav: '#sidenav',
     general: '#general',
-    pages: '#pages .container',
-    mainPage: '#pages',
+    details: '#details',
     links: '#links',
-    personalData: '#personal-data'
+    banners: '#banners',
+    personalData: '#personal-data',
+    payout: '#payout',
+    postback: '#postback'
   },
   templateOf: {
     header: '#template-header',
     sidenav: '#template-sidenav',
     general: '#template-general',
+    details: '#template-details',
     links: '#template-links',
-    personalData: '#template-personal-data'
+    banners: '#template-banners',
+    personalData: '#template-personal-data',
+    payout: '#template-payout',
+    postback: '#template-postback'
   },
 
   dropdown: {
@@ -75,10 +83,22 @@ export const templates = {
   general: Handlebars.compile(
     document.querySelector(select.templateOf.general).innerHTML
   ),
+  details: Handlebars.compile(
+    document.querySelector(select.templateOf.details).innerHTML
+  ),
   links: Handlebars.compile(
     document.querySelector(select.templateOf.links).innerHTML
   ),
+  banners: Handlebars.compile(
+    document.querySelector(select.templateOf.banners).innerHTML
+  ),
   personalData: Handlebars.compile(
     document.querySelector(select.templateOf.personalData).innerHTML
+  ),
+  payout: Handlebars.compile(
+    document.querySelector(select.templateOf.payout).innerHTML
+  ),
+  postback: Handlebars.compile(
+    document.querySelector(select.templateOf.postback).innerHTML
   )
 };
