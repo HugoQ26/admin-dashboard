@@ -45,9 +45,9 @@ class Header {
 
     thisHeader.dom.name = document.querySelector('#name');
 
-    console.log('aaasas', thisHeader.dom.name);
-
     thisHeader.dom.quitPop = document.querySelector(select.dropdown.quitPop);
+
+    thisHeader.dom.quitOverlay = document.querySelector(select.header.overlay);
   }
 
   initActions() {
@@ -59,6 +59,11 @@ class Header {
 
     thisHeader.dom.quitButton.addEventListener('click', function() {
       thisHeader.dom.quitPop.classList.add('show');
+    });
+
+    thisHeader.dom.quitOverlay.addEventListener('click', function(e) {
+      e.stopPropagation();
+      thisHeader.dom.quitPop.classList.remove('show');
     });
 
     const clickedName = new Event('click', {

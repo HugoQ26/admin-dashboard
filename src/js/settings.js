@@ -25,7 +25,8 @@ export const select = {
   },
 
   header: {
-    name: '#name'
+    name: '#name',
+    overlay: '.overlay'
   },
 
   sidenav: {

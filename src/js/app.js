@@ -89,6 +89,9 @@ const app = {
   initPages: function() {
     const thisApp = this;
 
+    const maxWidthM = 991.98;
+    const windowWidth = document.documentElement.clientWidth;
+
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
 
     thisApp.navLinks = document.querySelectorAll(select.sidenav.links);
@@ -115,6 +118,10 @@ const app = {
 
         /* run thisApp.activeatePage with that id */
         thisApp.activatePage(id);
+
+        if (windowWidth < maxWidthM) {
+          thisApp.sidenav.classList.add(classNames.sidenav.hideSidenav);
+        }
       });
     }
   },

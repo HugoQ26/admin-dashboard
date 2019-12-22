@@ -33,12 +33,17 @@ class Sidenav {
     );
 
     thisSidenav.dom.pages = document.querySelector(select.containerOf.mainPage);
+
+    // thisSidenav.dom.notSidenav = document.querySelector('*:not(#sidenav)');
   }
 
   resizePage() {
     const thisSidenav = this;
 
     const windowWidth = document.documentElement.clientWidth;
+    const isSidenavON = !thisSidenav.dom.element.classList.contains(
+      classNames.sidenav.hideSidenav
+    );
 
     if (windowWidth < thisSidenav.maxWidthM) {
       thisSidenav.dom.element.classList.add(classNames.sidenav.hideSidenav);
@@ -47,11 +52,15 @@ class Sidenav {
       thisSidenav.dom.element.classList.remove(classNames.sidenav.hideSidenav);
       thisSidenav.dom.pages.classList.remove(classNames.pages.pagesFullWidth);
     }
+
+    /*  Ponizej nie dziala*/
+    // if (windowWidth < thisSidenav.maxWidthM && isSidenavON) {
+
+    // }
   }
 
   initActions() {
     const thisSidenav = this;
-    const windowWidth = document.documentElement.clientWidth;
 
     thisSidenav.resizePage();
 
@@ -60,9 +69,9 @@ class Sidenav {
     thisSidenav.dom.hamburger.addEventListener('click', function(e) {
       e.preventDefault();
 
-      if (windowWidth > thisSidenav.maxWidthM) {
-        thisSidenav.dom.pages.classList.toggle(classNames.pages.pagesFullWidth);
-      }
+      // if (windowWidth > thisSidenav.maxWidthM) {
+      //   thisSidenav.dom.pages.classList.toggle(classNames.pages.pagesFullWidth);
+      // }
 
       thisSidenav.dom.element.classList.toggle(classNames.sidenav.hideSidenav);
     });
