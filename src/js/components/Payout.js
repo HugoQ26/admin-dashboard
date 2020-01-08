@@ -4,16 +4,17 @@ import { templates } from '../settings.js';
 import utils from '../utils.js';
 
 class Payout {
-  constructor(payoutWrapper) {
+  constructor(payoutWrapper, { payout }) {
     const thisPayout = this;
-    thisPayout.render(payoutWrapper);
+    thisPayout.render(payoutWrapper, payout);
     thisPayout.getElements();
-    thisPayout.initActions();
+    thisPayout.initActions(payout);
   }
 
-  render(element) {
+  render(element, payout) {
     const thisPayout = this;
-    const generatedHTML = templates.payout();
+
+    const generatedHTML = templates.payout(payout);
     thisPayout.dom = {};
     thisPayout.dom.wrapper = element;
 
@@ -25,7 +26,7 @@ class Payout {
     const thisPayout = this;
   }
 
-  initActions() {
+  initActions(payout) {
     const thisPayout = this;
   }
 }

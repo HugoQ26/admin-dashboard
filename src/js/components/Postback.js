@@ -23,6 +23,23 @@ class Postback {
 
   getElements() {
     const thisPostback = this;
+
+    const rangeSlider = document.getElementById('hours');
+    const rangeStart = document.querySelector('.range-start');
+    const rangeEnd = document.querySelector('.range-end');
+    const rangeDisplayValue = document.querySelector('.range-value');
+
+    const rangeMin = rangeSlider.getAttribute('min');
+    const rangeMax = rangeSlider.getAttribute('max');
+    const rangeValue = rangeSlider.value;
+
+    rangeSlider.addEventListener('input', function(e) {
+      const rangeValue = e.target.value;
+      rangeDisplayValue.innerHTML = rangeValue;
+    });
+
+    rangeStart.innerHTML = rangeMin;
+    rangeEnd.innerHTML = rangeMax;
   }
 
   initActions() {

@@ -52,7 +52,8 @@ const app = {
         msn: '',
         wallet: faker.finance.amount(),
         password: '',
-        links: []
+        links: [],
+        payout: []
       }
     ];
 
@@ -60,11 +61,16 @@ const app = {
       for (let link = 0; link < 10; link++) {
         const url = faker.internet.url();
         const name = url.slice(8);
-
         user.links.push({ url, name });
       }
+      for (let payout = 0; payout < 50; payout++) {
+        const date = `${faker.date.past()}`.slice(0, -50);
+        const amount = faker.finance.amount();
+        const deal = 'cpl(200)';
+        const account = 'bank';
+        user.payout.push({ date, amount, deal, account });
+      }
     }
-    console.log(thisApp.data);
   },
 
   initHeader: function() {
@@ -116,7 +122,7 @@ const app = {
 
     thisApp.payout = document.querySelector(select.containerOf.payout);
 
-    const payout = new Payout(thisApp.payout);
+    const payout = new Payout(thisApp.payout, thisApp.data[0]);
   },
 
   initPostback: function() {

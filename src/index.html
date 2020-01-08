@@ -465,18 +465,146 @@
       </form>
     </script>
 
-    <!-- Payout TODO -->
+    <!-- Payout CSS DONE Pagination TODO -->
     <script id="template-payout" type="text/x-handlebars-template">
-      <div class="row">
-        <h2>Payout TODO</h2>
-      </div>
+      <section class="payout">
+        <h2 class="horizontal-line-bottom px-2">Payout history</h2>
+        <div class="input-group horizontal-line-bottom">
+          <input type="date" name="" id="">
+          <input type="date" name="" id="">
+          <button class="btn btn-yellow btn-equal-padding">
+            <svg class="svg-small svg-white" viewBox="0 0 16 17">
+              <path
+                d="M11,6h5V1h-1v3.3l-1.2-1.1c-2.9-2.9-7.7-2.9-10.6,0c-2.9,2.9-2.9,7.7,0,10.6C4.7,15.3,6.6,16,8.5,16s3.8-0.7,5.3-2.2
+          l-0.7-0.7c-2.5,2.5-6.7,2.5-9.2,0c-2.5-2.5-2.5-6.7,0-9.2c2.5-2.5,6.7-2.5,9.2,0L14.2,5H11V6z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <tr>
+              <th><p>Date</p></th>
+              <th><p>Amount($)</p></th>
+              <th><p>Deal</p></th>
+              <th><p>Account</p></th>
+            </tr>
+            {{#each this}}
+              <tr>
+                <td><p>{{this.date}}</p></td>
+                <td><p>{{this.amount}}</p></td>
+                <td><p>{{this.deal}}</p></td>
+                <td><p>{{this.account}}</p></td>
+              </tr>
+            {{/each}}
+
+          </table>
+        </div>
+
+        <div class="pagination">
+          <a href="#"><</a>
+          <a href="#">1</a>
+          <a class="active" href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">></a>
+        </div>
+
+      </section>
     </script>
 
     <!-- Postback TODO -->
     <script id="template-postback" type="text/x-handlebars-template">
-      <div class="row">
-        <h2>Postback TODO</h2>
-      </div>
+      <section class="postback">
+        <h2 class="horizontal-line-bottom px-2">Payout history</h2>
+        <form action="" method="post">
+          <div class="form-group horizontal-line-bottom">
+            <p>You can insert some parameters in this postback</p>
+            <div class="text-area-wrapper">
+              <h2>Signup</h2>
+              <textarea name="signup" id="signup"  rows="8"></textarea>
+            </div>
+            <div class="text-area-wrapper">
+              <h2>Deposit</h2>
+              <textarea name="deposit" id="deposit"  rows="8"></textarea>
+            </div>
+            <div class="select-area-wrapper">
+              <h2>Postback type</h2>
+              <select name="postback-type" id="postback-type">
+                <option value="">S2S (http://...)</option>
+                <option value="dog">Dog</option>
+              </select>
+            </div>
+            <div class="select-area-wrapper">
+              <h2>To countries</h2>
+              <select name="country" id="country">
+                <option value="">Select countries</option>
+                <option value="dog">Poland</option>
+              </select>
+            </div>
+            <div class="select-area-wrapper">
+              <h2>Sending options</h2>
+              <select name="options" id="options">
+                <option value="">Select option</option>
+                <option value="dog">Option 1</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="form-group horizontal-line-bottom">
+            <div class="checbox-range-wrapper">
+              <h2><span>NOT</span> send statuses</h2>
+              <div class="check-group">
+                <input type="checkbox" name="checkNumber" id="checkNumber">
+                <label for="checkNumber">checkNumber</label>
+              </div>
+              <div class="check-group">
+                <input type="checkbox" name="noAnswer" id="noAnswer">
+                <label for="checkNumber">noAnswer</label>
+              </div>
+              <div class="check-group">
+                <input type="checkbox" name="noCall" id="noCall">
+                <label for="checkNumber">noCall</label>
+              </div>
+              <div class="check-group">
+                <input type="checkbox" name="callAgain" id="callAgain">
+                <label for="checkNumber">callAgain</label>
+              </div>
+              <div class="check-group">
+                <input type="checkbox" name="leaveAmessage" id="leaveAmessage">
+                <label for="checkNumber">leaveAmessage</label>
+              </div>
+              <div class="check-group">
+                <input type="checkbox" name="blockUser" id="blockUser">
+                <label for="checkNumber">blockUser</label>
+              </div>
+
+
+            </div>
+            <div class="checbox-range-wrapper">
+              <h2>Sending options</h2>
+              <div class="range-relative">
+                <p class="range-start">00</p>
+                <p class="range-end">100</p>
+                <input type="range" name="hours" id="hours" min="0" max="201" value="0" class="slider">
+                <p class="range-value">0</p>
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+        <button type="submit" class="btn btn-yellow">Create pixel</button>
+
+        </div>
+
+
+
+      </section>
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
